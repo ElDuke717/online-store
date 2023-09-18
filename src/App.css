@@ -44,7 +44,18 @@
   --red-vivid-600: #cf1124;
   --red-vivid-700: #ab091e;
   --red-vivid-800: #8a041a;
-  --red-vivid-900: #;
+  --red-vivid-900: #610316;
+
+  --teal-050: #effcf6;
+  --teal-100: #c6f7e2;
+  --teal-200: #8eedc7;
+  --teal-300: #65d6ad;
+  --teal-400: #3ebd93;
+  --teal-500: #27ab83;
+  --teal-600: #199473;
+  --teal-700: #147d64;
+  --teal-800: #0c6b58;
+  --teal-900: #014d40;
 }
 
 /* General Styling */

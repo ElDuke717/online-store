@@ -1,9 +1,15 @@
+import React from 'react';
+import ProductList from './ProductList';
+
 const Home = () => {
-    return (
-      <div>
-        <h2>Welcome to the Online Store</h2>
-        {/* Featured products will go here */}
-      </div>
-    );
-  };
+  return (
+    <div>
+      <h2>Welcome to the Online Store</h2>
+      <ProductList />
+    </div>
+  );
+};
+
+export default Home;
+
   

@@ -25,3 +25,18 @@ src/
 |-- App.js
 |-- index.js
 ```
+
+## Color Scheme
+
+![Color Scheme](./src/assets/images/color_palette13.png)
+
+## Technologies
+
+- React
+- React Router
+- React Hooks
+- React Context
+- Styled Components
+- React Icons
+
+## Features

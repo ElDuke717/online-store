@@ -10,13 +10,32 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+  const addToCart = (newProduct) => {
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find(
+        (item) => item.product.id === newProduct.id
+      );
+
+      if (existingProduct) {
+        return prevCart.map((item) =>
+          item.product.id === newProduct.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prevCart, { product: newProduct, quantity: 1 }];
+      }
+    });
   };
 
   const removeFromCart = (id) => {
-    const updatedCart = cart.filter((product) => product.id !== id);
-    setCart(updatedCart);
+    setCart((prevCart) => {
+      return prevCart
+        .map((item) =>
+          item.product.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter((item) => item.quantity > 0);
+    });
   };
 
   const value = {

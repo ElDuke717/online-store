@@ -3,9 +3,9 @@ import { useCart } from '../context/CartContext';
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
-  
+
   const calculateTotal = () => {
-    return cart.reduce((acc, item) => acc + item.price, 0);
+    return cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
   };
 
   return (
@@ -16,10 +16,10 @@ const Cart = () => {
       ) : (
         <>
           <ul>
-            {cart.map((product, index) => (
+            {cart.map((item, index) => (
               <li key={index}>
-                {product.name} - ${product.price}
-                <button onClick={() => removeFromCart(product.id)}>Remove</button>
+                {item.product.name} - ${item.product.price} x {item.quantity}
+                <button onClick={() => removeFromCart(item.product.id)}>Remove</button>
               </li>
             ))}
           </ul>

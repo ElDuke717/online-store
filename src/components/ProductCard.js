@@ -1,6 +1,6 @@
 import { useCart } from '../context/CartContext'
 
-const ProductCard = ({ product, addToCartFromProps }) => {
+const ProductCard = ({ product }) => {
 
   const { addToCart } = useCart();
 

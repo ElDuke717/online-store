@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 
 const Cart = () => {
+  useEffect(() => {
+    console.log("Cart component mounted");
+    console.log("Initial state of cart in Cart component:", cart);
+  }, []);
+  
+
+
   const { cart, removeFromCart } = useCart();
 
   const calculateTotal = () => {

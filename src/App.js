@@ -1,6 +1,6 @@
 // App.js
-// App.js
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
@@ -11,14 +11,18 @@ import "./App.css";
 function App() {
   return (
     <CartProvider>
-      <div>
-        <Header />
-        <main>
-          <Cart />
-          <Home />
-        </main>
-        <Footer />
-      </div>
+      <Router>
+        <div>
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
     </CartProvider>
   );
 }

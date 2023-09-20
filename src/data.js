@@ -3,7 +3,7 @@ const products = [
     id: "1",
     name: "Laptop",
     price: 999,
-    image: "laptop.png",
+    image: "src/assets/images/laptop.jpg",
     description: "High-performance laptop.",
   },
   {

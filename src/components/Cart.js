@@ -1,6 +1,9 @@
 import React from 'react';
+import { useCart } from '../context/CartContext';
 
-const Cart = ({ cart, removeFromCart }) => {
+const Cart = () => {
+  const { cart, removeFromCart } = useCart();
+  
   const calculateTotal = () => {
     return cart.reduce((acc, item) => acc + item.price, 0);
   };
